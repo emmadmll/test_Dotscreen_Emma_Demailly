@@ -1,0 +1,74 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: darkblue;
+    text-align: center;
+}
+
+.game {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+#status {
+    font-weight: bold;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 6px;
+    padding: 10px;
+    background: blue;
+    border-radius: 12px;
+    width: 100%;
+}
+
+.cell {
+    aspect-ratio: 1;
+    min-width: 0;
+    border-radius: 50%;
+    background: white;
+    border: none;
+}
+
+.cell.player1 {
+    background: red;
+}
+
+.cell.player2 {
+    background: yellow;
+}
+
+#restart {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: darkblue;
+    color: white;
+}
+
+#restart:hover {
+    background: blue;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 12px;
+    }
+
+    #board {
+        gap: 4px;
+        padding: 6px;
+    }
+}
