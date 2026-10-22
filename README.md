@@ -1,7 +1,6 @@
-# test_Dotscreen_Emma_Demailly
-test technique DOTSCREEN
+test technique DOTSCREEN réalisé par Emma Demailly
 
-#Présentation 
+# Présentation 
 Ce projet consiste à développer un jeu de Puissance 4 jouable directement sur navigateur.
 
 # Technologies utilisées 
