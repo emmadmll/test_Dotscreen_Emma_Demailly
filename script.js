@@ -54,15 +54,19 @@ function play(column) {
 
             // on vérifie que si le joueur a placé un point qui le fait gagner 
             if (checkWinner(row, column, currentPlayer)) {
-                document.getElementById("status").textContent = "Le joueur " + currentPlayer + " a gagné !";
+                const message = "Le joueur " + currentPlayer + " a gagné !";
+                document.getElementById("status").textContent = message;
+                showPopup(message);
                 gameOver = true;
                 return;
             }
             // on vérifie si il y a match nul
             else if(isDraw()){
-                document.getElementById("status").textContent = "Match nul ! Aucun joueur n'a gagné !"; 
+                const message = "Match nul ! Aucun joueur n'a gagné !";
+                document.getElementById("status").textContent = message;
+                showPopup(message);
                 gameOver = true; 
-                rerturn; 
+                return; 
             }
 
             // changement du joueur
@@ -152,6 +156,28 @@ function isDraw() {
 
 
 
+function showPopup(message) {
+    document.getElementById("popup-message").textContent = message;
+    document.getElementById("popup").classList.remove("hidden");
+}
+
+function hidePopup() {
+    document.getElementById("popup").classList.add("hidden");
+}
+
+
+function restartGame() {
+    initializeBoard();
+    updateBoard();
+    updateStatus();
+    hidePopup();
+    currentPlayer = 1;
+    gameOver = false;
+}
+
+
+
+
 // événements 
 
 const boardElement = document.getElementById("board");
@@ -167,10 +193,7 @@ boardElement.addEventListener("click", function(event) {
 
 
 const restartButton = document.getElementById("restart");
-restartButton.addEventListener("click", function() {
-    initializeBoard();
-    updateBoard(); 
-    updateStatus(); 
-    currentPlayer = 1;
-    gameOver = false;
-});
+restartButton.addEventListener("click", restartGame);
+
+const popupRestartButton = document.getElementById("popup-restart");
+popupRestartButton.addEventListener("click", restartGame);

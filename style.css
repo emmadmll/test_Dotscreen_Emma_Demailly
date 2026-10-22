@@ -62,6 +62,47 @@ body {
     background: blue;
 }
 
+
+.popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.popup.hidden {
+    display: none;
+}
+
+.popup-content {
+    background: white;
+    color: darkblue;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.popup-content h2 {
+    margin-top: 0;
+}
+
+#popup-restart {
+    padding: 12px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    background: darkblue;
+    color: white;
+}
+
+
+
 @media (max-width: 400px) {
     body {
         padding: 12px;
